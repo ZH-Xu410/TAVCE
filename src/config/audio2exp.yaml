@@ -1,0 +1,36 @@
+DATA:
+  DATASET:
+    TYPE: VoxAudio
+    ROOT_DIR: /root/autodl-tmp/datasets/VoxCeleb1
+    FRAME_LEN: 10
+    HOP_LEN: 5
+    NAME: audio2exp
+  TRAIN_BATCH_SIZE: 32
+  EVAL_BATCH_SIZE: 32
+  NUM_WORKERS: 4
+
+MODEL:
+  TYPE: Audio2Exp
+  CHECKPOINT: 'checkpoints/audio2exp_00300.pth'
+
+TRAIN:
+  MAX_EPOCH: 300
+  LR: 2.0e-5
+  LR_DECAY_EPOCH: 45
+  WEIGHT_DECAY: 0
+  LOSS_WEIGHT:
+    W_COEFF_EXP: 2
+    W_LM: 0.01
+    W_LIPREADING: 0.01
+    W_EYE_BLINK: 4
+  RENDER:
+    BFM_FOLDER: src/face3d/BFM
+    CAMERA_D: 10
+    FOCAL: 1015
+    CENTER: 112
+    Z_NEAR: 5
+    Z_FAR: 15
+
+TAG:
+  NAME:  small_dataset
+

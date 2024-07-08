@@ -1,0 +1,15 @@
+DATA:
+  DATASET:
+    TYPE: Test
+    ROOT_DIR: /root/autodl-tmp/datasets/VoxCeleb2/test
+    KEYS: []
+    IMG_SIZE: 256
+  TRAIN_BATCH_SIZE: 1
+  EVAL_BATCH_SIZE: 1
+  NUM_WORKERS: 1
+
+audio2exp_cfg: 'src/config/audio2exp.yaml'
+audio2pose_cfg: 'src/config/audio2pose.yaml'
+facerender_cfg: 'src/config/facerender.yaml'
+
+cmtc_image_ckpt: 'exp/correlation/last.pth'
